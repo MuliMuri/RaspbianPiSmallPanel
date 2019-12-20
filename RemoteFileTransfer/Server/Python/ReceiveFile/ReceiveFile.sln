@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ReceiveFile", "ReceiveFile.pyproj", "{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {73467606-5308-4B67-A20B-E7E0C85DCEE2}
+	EndGlobalSection
+EndGlobal

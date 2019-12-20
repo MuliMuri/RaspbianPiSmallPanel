@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\RemoteFileTransfer\bin\Debug\RemoteFileTransfer.exe.config
+C:\Users\Administrator\Desktop\RemoteFileTransfer\bin\Debug\RemoteFileTransfer.exe
+C:\Users\Administrator\Desktop\RemoteFileTransfer\bin\Debug\RemoteFileTransfer.pdb
+C:\Users\Administrator\Desktop\RemoteFileTransfer\obj\Debug\RemoteFileTransfer.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\RemoteFileTransfer\obj\Debug\RemoteFileTransfer.Properties.Resources.resources
+C:\Users\Administrator\Desktop\RemoteFileTransfer\obj\Debug\RemoteFileTransfer.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\RemoteFileTransfer\obj\Debug\RemoteFileTransfer.exe
+C:\Users\Administrator\Desktop\RemoteFileTransfer\obj\Debug\RemoteFileTransfer.pdb
+C:\Users\Administrator\Desktop\RemoteFileTransfer\obj\Debug\RemoteFileTransfer.IndexForm.resources
