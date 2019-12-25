@@ -29,6 +29,7 @@ def new_connect(client_executor, address):
 
 #主执行函数
 
+
 #构建socket实例
 listener = sk.socket(sk.AF_INET, sk.SOCK_STREAM)
 listener.bind((local_ip, 39254))
