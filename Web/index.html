@@ -1,87 +1,305 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>测试</title>
-        <script src="js/jquery-3.4.1.min.js"></script>
-        <script src="js/mdui.min.js"></script>
-        <link rel="stylesheet" href="css/mdui.min.css">
-        <style type="text/css">
-            body {
-                margin: 0;
-            }
 
-            .page-header {
-                height: 70px;
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            .page-header .top-level-entry {
-                font-size: 18px;
-                font-weight: 600;
-            }
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>树莓派小面板</title>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/mdui.min.js"></script>
+  <link rel="stylesheet" href="css/mdui.min.css">
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
 
+    .page-header {
+      height: 70px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
 
-        </style>
-    </head>
-    <body class="mdui-theme-layout-dark">
-        <div class="mdui-container-fluid">
-            <div class="mdui-row">
-                <div class="page-header mdui-color-grey-900 mdui-col-md-12 mdui-shadow-4">
-                    <div class="mdui-row" style="height: 100%">
-                        
-                        <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
-                            <button class="top-level-entry mdui-btn mdui-center">首页</button>
-                        </div>
+    .page-header .top-level-entry {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      $('#wifi-switch-dom').on('click', function (e) {
+        e.stopPropagation();
+      });
 
+      $('#nas-switch-dom').on('click', function (e) {
+        e.stopPropagation();
+      });
 
-                        <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
-                            <button class="top-level-entry mdui-btn mdui-center"  mdui-menu="{target: '#menu'}">BT下载</button>
-                            <ul class="mdui-menu" id="menu">
-                                <li class="mdui-menu-item">
-                                  <a href="javascript:;" class="mdui-ripple">Refresh</a>
-                                </li>
-                                <li class="mdui-menu-item">
-                                  <a href="javascript:;" class="mdui-ripple">Settings</a>
-                                </li>
-                                <li class="mdui-menu-item">
-                                  <a href="javascript:;" class="mdui-ripple">Send feedback</a>
-                                </li>
-                                <li class="mdui-menu-item">
-                                  <a href="javascript:;" class="mdui-ripple">Help</a>
-                                </li>
-                                <li class="mdui-menu-item">
-                                  <a href="javascript:;" class="mdui-ripple">Signout</a>
-                                </li>
-                              </ul>
-                        </div>
+      $('#file-switch-dom').on('click', function (e) {
+        e.stopPropagation();
+      });
+    });
 
+    function WIFISwitch(sw) {
+      var wifiSwitchDOM = $('#wifi-switch');
+      var currSwitch = wifiSwitchDOM.prop('checked');
 
-                        <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
-                            <button class="top-level-entry mdui-btn mdui-center">WiFi桥接</button>
-                        </div>
+      if (currSwitch == false) {
+        if (sw == undefined) {
+          var inst = new mdui.Dialog('#example-1', {
+            closeOnEsc: false
+          });
+          inst.open();
+        } else if (sw == true) {
+          wifiSwitchDOM.prop('checked', false);
+        } else {
+          wifiSwitchDOM.prop('checked', true);
+        }
+      } else {
+        wifiSwitchDOM.prop('checked', true);
+      }
+    }
 
-                        <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
-                            <button class="top-level-entry mdui-btn mdui-center">网络NAS</button>
-                        </div>
+    function NASSwitch(sw) {
+      var nasSwitchDOM = $('#nas-switch');
+      var currSwitch = nasSwitchDOM.prop('checked');
 
-                        <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
-                            <button class="top-level-entry mdui-btn mdui-center">远程文件传输</button>
-                        </div>
+      if (currSwitch == false) {
+        if (sw == undefined) {
+          var inst = new mdui.Dialog('#example-2', {
+            closeOnEsc: false
+          });
+          inst.open();
+        } else if (sw == true) {
+          nasSwitchDOM.prop('checked', false);
+        } else {
+          nasSwitchDOM.prop('checked', true);
+        }
+      } else {
+        nasSwitchDOM.prop('checked', true);
+      }
+    }
 
-                        <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
-                            <button class="mdui-btn mdui-center mdui-color-pink mdui-shadow-4 mdui-ripple">用户登录</button>
-                        </div>
+    function FILESwitch(sw) {
+      var fileSwitchDOM = $('#file-switch');
+      var currSwitch = fileSwitchDOM.prop('checked');
+
+      if (currSwitch == false) {
+        if (sw == undefined) {
+          var inst = new mdui.Dialog('#example-3', {
+            closeOnEsc: false
+          });
+          inst.open();
+        } else if (sw == true) {
+          fileSwitchDOM.prop('checked', false);
+        } else {
+          fileSwitchDOM.prop('checked', true);
+        }
+      } else {
+        fileSwitchDOM.prop('checked', true);
+      }
+    }
+
+    function test(){
+      alert("此按钮已绑定控件");
+    }
+  </script>
+</head>
+
+<body class="mdui-theme-layout-dark mdui-theme-primary-light-green">
+  <div class="mdui-container-fluid">
+    <div class="mdui-row">
+      <div class="page-header mdui-color-grey-900 mdui-col-md-12 mdui-shadow-4">
+        <div class="mdui-row" style="height: 100%">
+
+          <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
+            <button class="top-level-entry mdui-btn mdui-center" onclick=test()>首页</button>
+          </div>
+
+          <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
+            <button class="top-level-entry mdui-btn mdui-center" mdui-menu="{target: '#menu1'}">离线下载</button>
+            <ul class="mdui-menu" id="menu1">
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">BT下载</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">链接下载(HTTP)</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">度盘黑科技</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">Aria2设置</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">设置</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">帮助</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mdui-col-sm-2 mdui-valign" style="height: 100%; z-index: 1">
+            <button class="top-level-entry mdui-btn mdui-center" mdui-menu="{target: '#menu2'}">WiFi工具</button>
+            <ul class="mdui-menu" id="menu2">
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">
+                  <div style="display: flex; align-items:center;">
+                    <div style="width: 10px; height: 10px; border-radius: 100px; background-color: rgb(0, 170, 0); ">
+                      <!--服务启动时颜色： rgb(0, 170, 0)，否则：rgb(226, 41, 41)-->
                     </div>
-                </div>
-            </div>
-        </div>
+                    <p style="margin: 0; margin-left: 10px;">WiFi已启用</p>
+                  </div>
+                </a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">WiFi桥接</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">WiFi干扰</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">WiFi暴力破解</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">WiFi抓包</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">帮助</a>
+              </li>
+              <li class="mdui-menu-item">
+                <label id="wifi-switch-dom" class="mdui-switch mdui-m-x-1">
+                  <input id="wifi-switch" type="checkbox" onclick="WIFISwitch()" />
+                  <i class="mdui-switch-icon"></i>
+                </label>
+              </li>
+            </ul>
+          </div>
 
-        <div class="mdui-container">
-            
+          <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
+            <button class="top-level-entry mdui-btn mdui-center" mdui-menu="{target: '#menu3'}">NAS服务器</button>
+            <ul class="mdui-menu" id="menu3">
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">
+                  <div style="display: flex; align-items:center;">
+                    <div style="width: 10px; height: 10px; border-radius: 100px; background-color: rgb(0, 170, 0); ">
+                      <!--服务启动时颜色： rgb(0, 170, 0)，否则：rgb(226, 41, 41)-->
+                    </div>
+                    <p style="margin: 0; margin-left: 10px;">服务已启动</p>
+                  </div>
+                </a>
+              </li>
+              <li class="mdui-menu-item">
+
+                <a href="javascript:;" class="mdui-ripple" style="padding: 0">
+                  <!-- <div class="mdui-progress-determinate" style="width: 100%; background-color:rgba(255, 255, 255, 0.61);">
+                                      <div class="mdui-progress-determinate" style="width: 15%; background-color:rgb(52, 247, 45);">
+                                        <div style="text-align: center;">
+                                          <a>30%</a>
+                                        </div>
+                                      </div>
+                                    </div> -->
+
+                  <div class="mdui-progress" style="height: 100%; position: relative;">
+                    <div class="mdui-progress-determinate mdui-color-grey-400" style="width: 100%;"></div>
+                    <div class="mdui-progress-determinate" style="width: 20%; background-color: rgb(142, 207, 43);">
+                    </div>
+                    <!--容量已用80%（剩余20%）颜色：rgb(226, 41, 41)，否则：rgb(142, 207, 43)-->
+                    <p style="margin: 0; position: absolute; left: 50%; transform: translateX(-50%); font-size: 10px;">
+                      剩余容量：20%（100MB）</p>
+                  </div>
+
+                </a>
+
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">设置</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">帮助</a>
+              </li>
+              <li class="mdui-menu-item">
+                <label id="nas-switch-dom" class="mdui-switch mdui-m-x-1">
+                  <input id="nas-switch" type="checkbox" onclick="NASSwitch()" />
+                  <i class="mdui-switch-icon"></i>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
+            <button class="top-level-entry mdui-btn mdui-center" mdui-menu="{target: '#menu4'}">文件传输服务</button>
+            <ul class="mdui-menu" id="menu4">
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">
+                  <div style="display: flex; align-items:center;">
+                    <!--<div style="width: 10px; height: 10px; border-radius: 100px; background-color: rgb(0, 170, 0); ">-->
+                    <!--服务启动时颜色： rgb(0, 170, 0)，否则：rgb(226, 41, 41)-->
+                    <!--</div>-->
+                    <div class="mdui-spinner" style="width: 20px; height: 20px;"></div>
+                    <p style="margin: 0; margin-left: 10px;">服务已启动</p>
+                  </div>
+                </a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">连接人数：</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">设置</a>
+              </li>
+              <li class="mdui-menu-item">
+                <a href="javascript:;" class="mdui-ripple">帮助</a>
+              </li>
+              <li class="mdui-menu-item">
+                <label id="file-switch-dom" class="mdui-switch mdui-m-x-1">
+                  <input id="file-switch" type="checkbox" onclick="FILESwitch()" />
+                  <i class="mdui-switch-icon"></i>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mdui-col-sm-2 mdui-valign" style="height: 100%">
+            <button class="mdui-btn mdui-center mdui-color-pink mdui-shadow-4 mdui-ripple">用户登录</button>
+          </div>
         </div>
-        
-        <!-- <button class="mdui-btn mdui-ripple mdui-color-pink">测试按钮</button> -->
-    </body>
+      </div>
+    </div>
+  </div>
+
+  <iframe src="HomePage.html" width="100%" height="100%"></iframe>
+
+  <div class="mdui-container">
+    <div class="mdui-dialog" id="example-1">
+      <!--WiFi开关对话框-->
+      <div class="mdui-dialog-title">您确定要关闭WiFi功能吗？</div>
+      <div class="mdui-dialog-content">关闭WiFi功能将导致任何有关于WiFi的工具都无法使用！</div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close onclick="WIFISwitch(false)">手滑了~</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-confirm onclick="WIFISwitch(true)">确定</button>
+      </div>
+    </div>
+    <div class="mdui-dialog" id="example-2">
+      <!--NAS服务器开关对话框-->
+      <div class="mdui-dialog-title">您确定要关闭NAS服务器吗？</div>
+      <div class="mdui-dialog-content">关闭NAS服务器将导致您的网络存储不可用！</div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close onclick="NASSwitch(false)">手滑了~</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-confirm onclick="NASSwitch(true)">确定</button>
+      </div>
+    </div>
+    <div class="mdui-dialog" id="example-3">
+      <!--文件传输服务开关对话框-->
+      <div class="mdui-dialog-title">您确定要关闭文件传输服务吗？</div>
+      <div class="mdui-dialog-content">关闭文件传输服务将导致您无法远程传输服务！请慎重！！！</div>
+      <div class="mdui-dialog-actions">
+        <button class="mdui-btn mdui-ripple" mdui-dialog-close onclick="FILESwitch(false)">手滑了~</button>
+        <button class="mdui-btn mdui-ripple" mdui-dialog-confirm onclick="FILESwitch(true)">我已了解风险，任然确定</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- <button class="mdui-btn mdui-ripple mdui-color-pink">测试按钮</button> -->
+</body>
+
 </html>
