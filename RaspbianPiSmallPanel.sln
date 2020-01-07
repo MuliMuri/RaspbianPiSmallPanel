@@ -1,0 +1,133 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{74F8FE0A-2ED8-4908-9269-DA1C2F9A1156}"
+	ProjectSection(SolutionItems) = preProject
+		Web\HomePage.html = Web\HomePage.html
+		Web\index.html = Web\index.html
+		Web\README.md = Web\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{F029DA68-622A-4424-992D-32264AB07FD3}"
+	ProjectSection(SolutionItems) = preProject
+		Web\js\jquery-3.4.1.min.js = Web\js\jquery-3.4.1.min.js
+		Web\js\mdui.js = Web\js\mdui.js
+		Web\js\mdui.min.js = Web\js\mdui.min.js
+		Web\js\mdui.min.js.map = Web\js\mdui.min.js.map
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "icons", "icons", "{63B6EEF3-61C3-4824-B955-F192EA7474D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fonts", "fonts", "{770AE52F-5AFF-44E2-B9A1-1111E2AF54F8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{0DA58AC6-F07D-4885-88D8-A21A9B213532}"
+	ProjectSection(SolutionItems) = preProject
+		Web\css\mdui.css = Web\css\mdui.css
+		Web\css\mdui.min.css = Web\css\mdui.min.css
+		Web\css\mdui.min.css.map = Web\css\mdui.min.css.map
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "material-icons", "material-icons", "{A5A934FC-7537-45CF-B432-A64F23E66D60}"
+	ProjectSection(SolutionItems) = preProject
+		Web\icons\material-icons\LICENSE.txt = Web\icons\material-icons\LICENSE.txt
+		Web\icons\material-icons\MaterialIcons-Regular.ijmap = Web\icons\material-icons\MaterialIcons-Regular.ijmap
+		Web\icons\material-icons\MaterialIcons-Regular.woff = Web\icons\material-icons\MaterialIcons-Regular.woff
+		Web\icons\material-icons\MaterialIcons-Regular.woff2 = Web\icons\material-icons\MaterialIcons-Regular.woff2
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "roboto", "roboto", "{2F4D4DCD-1C72-46A4-B926-F6AF916BC3C7}"
+	ProjectSection(SolutionItems) = preProject
+		Web\fonts\roboto\LICENSE.txt = Web\fonts\roboto\LICENSE.txt
+		Web\fonts\roboto\Roboto-Black.woff = Web\fonts\roboto\Roboto-Black.woff
+		Web\fonts\roboto\Roboto-Black.woff2 = Web\fonts\roboto\Roboto-Black.woff2
+		Web\fonts\roboto\Roboto-BlackItalic.woff = Web\fonts\roboto\Roboto-BlackItalic.woff
+		Web\fonts\roboto\Roboto-BlackItalic.woff2 = Web\fonts\roboto\Roboto-BlackItalic.woff2
+		Web\fonts\roboto\Roboto-Bold.woff = Web\fonts\roboto\Roboto-Bold.woff
+		Web\fonts\roboto\Roboto-Bold.woff2 = Web\fonts\roboto\Roboto-Bold.woff2
+		Web\fonts\roboto\Roboto-BoldItalic.woff = Web\fonts\roboto\Roboto-BoldItalic.woff
+		Web\fonts\roboto\Roboto-BoldItalic.woff2 = Web\fonts\roboto\Roboto-BoldItalic.woff2
+		Web\fonts\roboto\Roboto-Light.woff = Web\fonts\roboto\Roboto-Light.woff
+		Web\fonts\roboto\Roboto-Light.woff2 = Web\fonts\roboto\Roboto-Light.woff2
+		Web\fonts\roboto\Roboto-LightItalic.woff = Web\fonts\roboto\Roboto-LightItalic.woff
+		Web\fonts\roboto\Roboto-LightItalic.woff2 = Web\fonts\roboto\Roboto-LightItalic.woff2
+		Web\fonts\roboto\Roboto-Medium.woff = Web\fonts\roboto\Roboto-Medium.woff
+		Web\fonts\roboto\Roboto-Medium.woff2 = Web\fonts\roboto\Roboto-Medium.woff2
+		Web\fonts\roboto\Roboto-MediumItalic.woff = Web\fonts\roboto\Roboto-MediumItalic.woff
+		Web\fonts\roboto\Roboto-MediumItalic.woff2 = Web\fonts\roboto\Roboto-MediumItalic.woff2
+		Web\fonts\roboto\Roboto-Regular.woff = Web\fonts\roboto\Roboto-Regular.woff
+		Web\fonts\roboto\Roboto-Regular.woff2 = Web\fonts\roboto\Roboto-Regular.woff2
+		Web\fonts\roboto\Roboto-RegularItalic.woff = Web\fonts\roboto\Roboto-RegularItalic.woff
+		Web\fonts\roboto\Roboto-RegularItalic.woff2 = Web\fonts\roboto\Roboto-RegularItalic.woff2
+		Web\fonts\roboto\Roboto-Thin.woff = Web\fonts\roboto\Roboto-Thin.woff
+		Web\fonts\roboto\Roboto-Thin.woff2 = Web\fonts\roboto\Roboto-Thin.woff2
+		Web\fonts\roboto\Roboto-ThinItalic.woff = Web\fonts\roboto\Roboto-ThinItalic.woff
+		Web\fonts\roboto\Roboto-ThinItalic.woff2 = Web\fonts\roboto\Roboto-ThinItalic.woff2
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RemoteFileTransfer", "RemoteFileTransfer", "{92B097F9-69AB-4784-BECA-7ACACACAC42C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{D3B78440-74E0-484B-9DA4-BAB5575D0944}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{A9AD8EB7-F2DB-425B-9A56-47FA65DE194E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python", "Python", "{073DC14A-ACD3-41DF-B0D6-7154B484A92D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReceiveFile", "ReceiveFile", "{448FEAF7-3852-466D-BB9D-27B460867D75}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ReceiveFile", "RemoteFileTransfer\Server\Python\ReceiveFile\ReceiveFile.pyproj", "{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSharp", "CSharp", "{AF9503C1-119C-490B-B5C6-6555CFAB904C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RemoteFileTransfer", "RemoteFileTransfer", "{387196AF-FF8C-4336-B4D7-F3DFB654B661}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteFileTransfer", "RemoteFileTransfer\Client\C#\RemoteFileTransfer\RemoteFileTransfer.csproj", "{E6104FBB-89E0-44A0-9C11-8E4F80360AAF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Python", "Python", "{CAECE235-3648-41E4-AB4E-5D4812482A95}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RemoteFileTransfer", "RemoteFileTransfer", "{E8DF10B5-8F86-455C-A917-CB3E976DBEDF}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "RemoteFile", "RemoteFileTransfer\Client\Python\RemoteFileTransfer\RemoteFile.pyproj", "{CD3CD4D1-1D96-4A66-A6B9-D4B5C9C2F0D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6104FBB-89E0-44A0-9C11-8E4F80360AAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6104FBB-89E0-44A0-9C11-8E4F80360AAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6104FBB-89E0-44A0-9C11-8E4F80360AAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6104FBB-89E0-44A0-9C11-8E4F80360AAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD3CD4D1-1D96-4A66-A6B9-D4B5C9C2F0D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD3CD4D1-1D96-4A66-A6B9-D4B5C9C2F0D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F029DA68-622A-4424-992D-32264AB07FD3} = {74F8FE0A-2ED8-4908-9269-DA1C2F9A1156}
+		{63B6EEF3-61C3-4824-B955-F192EA7474D8} = {74F8FE0A-2ED8-4908-9269-DA1C2F9A1156}
+		{770AE52F-5AFF-44E2-B9A1-1111E2AF54F8} = {74F8FE0A-2ED8-4908-9269-DA1C2F9A1156}
+		{0DA58AC6-F07D-4885-88D8-A21A9B213532} = {74F8FE0A-2ED8-4908-9269-DA1C2F9A1156}
+		{A5A934FC-7537-45CF-B432-A64F23E66D60} = {63B6EEF3-61C3-4824-B955-F192EA7474D8}
+		{2F4D4DCD-1C72-46A4-B926-F6AF916BC3C7} = {770AE52F-5AFF-44E2-B9A1-1111E2AF54F8}
+		{D3B78440-74E0-484B-9DA4-BAB5575D0944} = {92B097F9-69AB-4784-BECA-7ACACACAC42C}
+		{A9AD8EB7-F2DB-425B-9A56-47FA65DE194E} = {92B097F9-69AB-4784-BECA-7ACACACAC42C}
+		{073DC14A-ACD3-41DF-B0D6-7154B484A92D} = {D3B78440-74E0-484B-9DA4-BAB5575D0944}
+		{448FEAF7-3852-466D-BB9D-27B460867D75} = {073DC14A-ACD3-41DF-B0D6-7154B484A92D}
+		{86BDDCA9-3E07-45F2-80D2-73B6E2BF5AF5} = {448FEAF7-3852-466D-BB9D-27B460867D75}
+		{AF9503C1-119C-490B-B5C6-6555CFAB904C} = {A9AD8EB7-F2DB-425B-9A56-47FA65DE194E}
+		{387196AF-FF8C-4336-B4D7-F3DFB654B661} = {AF9503C1-119C-490B-B5C6-6555CFAB904C}
+		{E6104FBB-89E0-44A0-9C11-8E4F80360AAF} = {387196AF-FF8C-4336-B4D7-F3DFB654B661}
+		{CAECE235-3648-41E4-AB4E-5D4812482A95} = {A9AD8EB7-F2DB-425B-9A56-47FA65DE194E}
+		{E8DF10B5-8F86-455C-A917-CB3E976DBEDF} = {CAECE235-3648-41E4-AB4E-5D4812482A95}
+		{CD3CD4D1-1D96-4A66-A6B9-D4B5C9C2F0D8} = {E8DF10B5-8F86-455C-A917-CB3E976DBEDF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1CE36C39-B259-43F1-9BB7-C8C3E6DF2495}
+	EndGlobalSection
+EndGlobal

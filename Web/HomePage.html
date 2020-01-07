@@ -1,39 +1,59 @@
-<!DOCTYPE html>
-<html>
+<script>
+  function dashBoard() {
+    $.ajax({
+      url: 'HomePage_dashBoard.html',
+      success: function (date) {
+        $('#RightPageContext').html(date);
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>树莓派小面板</title>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/mdui.min.js"></script>
-  <link rel="stylesheet" href="css/mdui.min.css">
-  <style type="text/css">
-    body {
-      margin: 0;
-    }
+        $('#RightPageContext').animate({
+          'top':'0',
+          'opacity':'1'
+        }, 500);
+      }
+    });
+  }
+</script>
 
-    .page-header {
-      height: 70px;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
+<div id="drawer" state="hide">
+  <ul class="mdui-list">
+    <li class="mdui-list-item mdui-ripple">
+      <i class="mdui-icon"><svg t="1577195846702" class="icon" viewBox="0 0 1024 1024" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" p-id="1277" width="32" height="32">
+          <path
+            d="M798.208 293.056C880.512 366.336 932 470.88 932 586.912c0 80.736-24.928 155.904-67.84 218.88l0.64 0.352a28.448 28.448 0 0 0 0.16 28.608c8.16 13.6 26.272 17.696 40.48 9.152a31.136 31.136 0 0 0 8.32-7.296l0.736 0.448A442.464 442.464 0 0 0 992 586.912c0-132.608-58.816-252.064-152.896-335.84l-40.896 41.984z m-162.848-90.08a437.76 437.76 0 0 0-123.36-17.6c-231.968 0-420 179.776-420 401.536a386.144 386.144 0 0 0 63.552 212.48 27.616 27.616 0 0 1 3.328 4.48c8.16 13.568 3.264 31.488-10.944 40-14.208 8.576-32.32 4.48-40.48-9.12a27.712 27.712 0 0 1-1.696-3.264A441.344 441.344 0 0 1 32 586.912C32 333.472 246.912 128 512 128c49.056 0 96.416 7.04 140.992 20.128l-17.6 54.848zM454.08 683.104c-61.504-35.52-37.024-77.76 6.496-133.984C504.128 492.896 816 79.168 816 79.168S616.544 517.44 569.792 605.44c-46.784 88-53.472 113.568-115.744 77.632z"
+            fill="#707070" p-id="1278"></path>
+        </svg></i>
+      <div class="mdui-list-item-content" onclick="dashBoard()">仪表盘</div>
+    </li>
+  </ul>
+</div>
+<div id="RightPageContext">
+  
+</div>
+<style>
+  #drawer {
+    margin-left: -250px;
 
-    .page-header .top-level-entry {
-      font-size: 18px;
-      font-weight: 600;
-    }
-  </style>
+    height: 100%;
+    width: 250px;
+    background-color: rgb(60, 60, 60);
+    text-align: center;
+    float: left;
 
-<body class="mdui-theme-layout-dark mdui-drawer-body-left" style="padding-top: 20px;">
+    /*transition: margin-left 0.5s;*/ 
+  }
 
-  <div class="mdui-drawer mdui-hoverable" id="drawer" style="background-color:rgb(60, 60, 60); text-align: center;">
-    <ul class="mdui-list">
-      <li class="mdui-list-item mdui-ripple">
-        <i class="mdui-icon"><svg t="1577195846702" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1277" width="32" height="32"><path d="M798.208 293.056C880.512 366.336 932 470.88 932 586.912c0 80.736-24.928 155.904-67.84 218.88l0.64 0.352a28.448 28.448 0 0 0 0.16 28.608c8.16 13.6 26.272 17.696 40.48 9.152a31.136 31.136 0 0 0 8.32-7.296l0.736 0.448A442.464 442.464 0 0 0 992 586.912c0-132.608-58.816-252.064-152.896-335.84l-40.896 41.984z m-162.848-90.08a437.76 437.76 0 0 0-123.36-17.6c-231.968 0-420 179.776-420 401.536a386.144 386.144 0 0 0 63.552 212.48 27.616 27.616 0 0 1 3.328 4.48c8.16 13.568 3.264 31.488-10.944 40-14.208 8.576-32.32 4.48-40.48-9.12a27.712 27.712 0 0 1-1.696-3.264A441.344 441.344 0 0 1 32 586.912C32 333.472 246.912 128 512 128c49.056 0 96.416 7.04 140.992 20.128l-17.6 54.848zM454.08 683.104c-61.504-35.52-37.024-77.76 6.496-133.984C504.128 492.896 816 79.168 816 79.168S616.544 517.44 569.792 605.44c-46.784 88-53.472 113.568-115.744 77.632z" fill="#707070" p-id="1278"></path></svg></i>
-        <div class="mdui-list-item-content">仪表盘</div>
-      </li>
-    </ul>
-  </div>
-</body>
-</head>
+  #RightPageContext {
+
+    position: relative;
+    top: 100%;
+    opacity: 0;
+
+    height: 100%;
+    width: calc(100% - 250px);
+    text-align: center;
+    float: right;
+
+    /*transition: margin-left 0.5s;*/
+  }
+</style>
