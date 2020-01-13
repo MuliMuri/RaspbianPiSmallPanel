@@ -8,13 +8,14 @@
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/mdui.min.js"></script>
+  <script src="js/dashBoard.js"></script>
+  <script src="js/echarts.min.js"></script>
   <link rel="stylesheet" href="css/mdui.min.css">
 
   <style type="text/css">
     body,
     html {
       margin: 0;
-      overflow: hidden;
       height: 100%;
       width: 100%;
     }
@@ -47,11 +48,6 @@
 
       HomePage(true);
     });
-
-    var sleep = function (time) {
-      var startTime = new Date().getTime() + parseInt(time, 10);
-      while (new Date().getTime() < startTime) { }
-    };
 
     function WIFISwitch(sw) {
       var wifiSwitchDOM = $('#wifi-switch');
@@ -119,8 +115,7 @@
           url: 'HomePage.html',
           success: function (date) {
             $('#MainPageContext').html(date);
-            sleep(500);
-            OpenMenu();
+            setTimeout(OpenMenu(), 1000);
           }
         });
       }
@@ -371,7 +366,7 @@
   <!--<button class="mdui-btn mdui-ripple mdui-color-pink" onclick="OpenMenu()">测试按钮</button>-->
 
   <!-- 主内容界面 -->
-  <div id="MainPageContext" style="overflow: hidden; height: 100%; width: 100%;">
+  <div id="MainPageContext" style="height: 100%; width: 100%;">
 
   </div>
 

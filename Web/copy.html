@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="name" charset="utf-8" content="content">
+    <title>折线图</title>
+    <style type="text/css" media="screen">
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+    .standard-area {
+        float: left;
+        width: 700px;
+        height: 400px;
+        margin-top: 30px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="gloab">
+        <div class="gloab1">
+            <div class="standard-area" id="standard-area">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://echarts.baidu.com/build/dist/echarts-all.js"></script>
+    <script type="text/javascript">
+    var mychar = echarts.init(document.getElementById('standard-area'));
+    var option = {
+        //图表展示的类别，这里的data和series中得name对应
+        legend: {
+            data: ['意向', '预购', '成交']
+        },
+        //这里的是采用什么方式触发数据，这里显示的竖轴，跟随鼠标移动到节点上会显示内容
+        tooltip: {
+            trigger: 'axis'
+        },
+        //代表x轴，这里type类型代表字符
+        xAxis: [{
+            type: 'category',
+            boundaryGap: false,//这里表示是否补齐空白
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        }],
+        //代表y轴，这里type类型代表num类型
+        yAxis: [{
+            type: 'value',
+        }],
+        //图表类型，type表示按照什么类型图表显示，line代表折线，下面的内容与
+        //legend一一对应
+        series: [{
+            name: '成交',
+            type: 'line',
+            smooth: true,
+            itemStyle: {
+                normal: {
+                    areaStyle: {
+                        type: 'default'
+                    }
+                }
+            },
+            data: [10, 12, 21, 54, 260, 830, 2]
+        }, {
+            name: '意向',
+            type: 'line',
+            smooth: true,
+            itemStyle: {
+                normal: {
+                    areaStyle: {
+                        type: 'default'
+                    }
+                }
+            },
+            data: [1320, 1132, 601, 234, 120, 90, 20]
+        }, {
+            name: '预购',
+            type: 'line',
+            smooth: true,
+            itemStyle: {
+                normal: {
+                    areaStyle: {
+                        type: 'default'
+                    }
+                }
+            },
+            data: [30, 182, 434, 791, 390, 30, 10]
+        }]
+    };
+    //配置图表设置并读取
+    mychar.setOption(option);
+    </script>
+</body>
+
+</html>
