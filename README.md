@@ -1,5 +1,6 @@
 # RaspbianPiSmallPanel
 树莓派小面板
+（同样可用于Linux，Windows等其他系统）
 
 
 基于：Python，C＃，W3C（HTML,CSS,JavaScript），PHP，Linux命令，aria2
