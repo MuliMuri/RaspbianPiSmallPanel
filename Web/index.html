@@ -117,7 +117,7 @@
           TipsShow('<div class="mdui-spinner" style="width: 20px; height: 20px;"></div>', 'NAS服务器', '正在关闭：', 'NAS_Server_state_Color', 'NAS_Server_state_Text', true/*是否更改状态*/, 0);
 
           //模拟传输完毕-开始
-          setTimeout(function () { setTimeout(Snackbar_.close(), 4000); }, 4000);
+          setTimeout(function () { setTimeout(Snackbar_.close(), 4000); Update_NAS_Server_Progress(false);}, 4000);
           //模拟传输完毕-结束
         } else {
           //手滑了~
@@ -129,7 +129,7 @@
         nasSwitchDOM.prop('checked', true);
         TipsShow('<div class="mdui-spinner" style="width: 20px; height: 20px;"></div>', 'NAS服务器', '正在开启：', 'NAS_Server_state_Color', 'NAS_Server_state_Text', true/*是否更改状态*/, 1);
         //模拟传输完毕-开始
-        setTimeout(function () { setTimeout(Snackbar_.close(), 4000); }, 4000);
+        setTimeout(function () { setTimeout(Snackbar_.close(), 4000); Update_NAS_Server_Progress(true);}, 4000);
         //模拟传输完毕-结束
       }
     }
@@ -254,6 +254,50 @@
         },
       });
     }
+
+    function Update_NAS_Server_Progress(isNeed){    //更新NAS服务器所属进度条
+
+      var ALL_Disk_MAX = 16384; //1024 = 1MB, 16384MB = 16GB
+      var Really_Disk = 5120;   //5GB
+
+      var BFB = (Really_Disk / ALL_Disk_MAX * 100);   //计算占用百分比与剩余百分比
+      var L_BFB = 100 - BFB;
+
+      var Progress = $('#NAS_SERVER_disk_Progress');    //获取三个实例
+      var Text = document.getElementById('NAS_Server_disk_Text_BFB');
+      var CAP = document.getElementById('NAS_Server_disk_Text_CAP');;
+
+      if (isNeed == true){    //是否开关判断-----开
+        if (L_BFB <= 20){
+          Progress.css('background-color', 'rgb(226, 41, 41)');
+        }
+        else if (L_BFB > 20){
+          Progress.css('background-color', 'rgb(142, 207, 43)')
+        }
+        else {
+          alert("获取进度条容量失败！（内部错误！）")
+        };
+        Progress.animate({
+          'width' : BFB + '%',
+        });
+        Text.style.bottom = "10px";
+        Text.style.fontSize = "12px"
+        Text.innerText = L_BFB + '%';
+        CAP.innerText = '(' + (ALL_Disk_MAX - Really_Disk) + 'MB' + ')';
+      }
+      else if (isNeed == false){    //是否开关判断-----开
+        Progress.animate({
+          'width' : '0%',
+        });
+        Text.style.bottom = "0px";
+        Text.style.fontSize = "15px";
+        Text.innerText = 'Unknow';
+        CAP.innerText = '';
+      }
+      else{
+        alert("内部错误！");
+      };
+    };
   </script>
 </head>
 
@@ -351,21 +395,12 @@
               <li class="mdui-menu-item">
 
                 <a href="javascript:;" class="mdui-ripple" style="padding: 0">
-                  <!-- <div class="mdui-progress-determinate" style="width: 100%; background-color:rgba(255, 255, 255, 0.61);">
-                                      <div class="mdui-progress-determinate" style="width: 15%; background-color:rgb(52, 247, 45);">
-                                        <div style="text-align: center;">
-                                          <a>30%</a>
-                                        </div>
-                                      </div>
-                                    </div> -->
-
                   <div class="mdui-progress" style="height: 100%; position: relative;">
                     <div class="mdui-progress-determinate mdui-color-grey-400" style="width: 100%;"></div>
-                    <div class="mdui-progress-determinate" style="width: 80%; background-color: rgb(226, 41, 41);">
-                    </div>
+                    <div id="NAS_SERVER_disk_Progress" class="mdui-progress-determinate" style="width: 0%; background-color: rgb(142, 207, 43);"></div>
                     <!--容量已用80%（剩余20%）颜色：rgb(226, 41, 41)，否则：rgb(142, 207, 43)-->
-                    <p style="margin: 0; position: absolute; left: 50%; transform: translateX(-50%); font-size: 10px;">
-                      剩余容量：20%（100MB）</p>
+                    <p id="NAS_Server_disk_Text_BFB" style="margin: 0; position: absolute; left: 50%; bottom: 0px;transform: translateX(-50%); font-size: 15px;">Unknow</p>
+                    <p id="NAS_Server_disk_Text_CAP" style="margin: 0; position: absolute; left: 50%; top: 10px;transform: translateX(-50%); font-size: 12px;"></p>
                   </div>
 
                 </a>
